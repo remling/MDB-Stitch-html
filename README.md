@@ -5,6 +5,7 @@ based on Tutorial for **Basic Blog** at https://docs.mongodb.com/stitch/tutorial
 Allows data entry for and listing of simple Electric Car Power Stats based on Odometer reading, % charge, Temperature
 
 This is a "sanitized" version of the html file since no authentication restrictions are applied
-to use please replace
-- `<mongodb-atlas>` with Atlas Cluster name
-- `<stitch-application-name>` with Stitch Application name
+
+To use please replace
+- `<mongodb-atlas>` with own Atlas Cluster name
+- `<stitch-application-name>` with own Stitch Application name
