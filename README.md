@@ -9,3 +9,9 @@ This is a "sanitized" version of the html file since no authentication restricti
 To use please replace
 - `<mongodb-atlas>` with own Atlas Cluster name
 - `<stitch-application-name>` with own Stitch Application name
+
+
+**Next steps:** (not necessarily in this order)
+- add authentication based on gmail account
+- attmempt conversion to Android App
+
