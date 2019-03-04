@@ -1,0 +1,141 @@
+<html>
+        <!--  last updated 20190226 -->
+  <head>
+    <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.1.1/stitch.js">
+    </script>
+    <script>
+      // Initialize the App Client
+      const client = stitch.Stitch.initializeDefaultAppClient('<stitch-application-name>');
+      // Get a MongoDB Service Client
+      const db = client.getServiceClient(stitch.RemoteMongoClient.factory, '<mongodb-atlas>').db('blog');
+      client.auth.loginWithCredential(new stitch.AnonymousCredential()
+        ).then(user =>
+                    db.collection('comments').updateOne({owner_id: client.auth.user.id}, {$set:{lastLogin: Date()}}, {upsert:true})
+        ).then(() =>
+                    db.collection('comments').find({owner_id: client.auth.user.id}, { limit: 10}).asArray()
+        ).then(docs => {
+                console.log("Found docs", docs)
+                console.log("[MongoDB Stitch] Connected to Stitch")
+      }).catch(err => {
+                console.error(err)
+      });
+      function displayComments() {
+        db.collection("comments")
+          .find({dateTime :{$exists : 1}}, {sort : {_id : -1}, limit: 10} )
+          .toArray()
+          .then(docs => {
+            const html = docs.map(doc => `${doc.dateTime} -  ${doc.odo} - ${doc.perc} - ${doc.pr} - ${doc.comment}<p>`);
+            document.getElementById("d_display").innerHTML = html; 
+        });
+      }
+      function displayCommentsOnLoad() {
+        client.auth
+          .loginWithCredential(new stitch.AnonymousCredential())
+          .then(displayComments)
+          .catch(console.error);
+      }
+      function addStats() {
+
+        // values newly entered
+        const newComment = document.getElementById("new_comment");
+        const newOdo = document.getElementById("new_odo");
+        const newPerc = document.getElementById("new_perc");
+        const newTemp = document.getElementById("new_temp");
+        const newPr = document.getElementById("new_pr");
+
+        
+        // get the numbers in correct format
+        var now = new Date();  
+        var odo = parseInt(newOdo.value, 10);    
+        var perc = parseInt(newPerc.value, 10);
+        var temp = parseInt(newTemp.value, 10);   
+        var pr = parseInt(newPr.value, 10);   
+
+        // log action in console
+        console.log("add comment, addStats ", client.auth.user.id)
+
+        // insert new doc in collection
+        db.collection("comments")
+          .insertOne({ owner_id : client.auth.user.id, dateTime : now , odo: odo , perc: perc,  temp: temp , comment: newComment.value, 
+                         pr: pr })
+          .then(displayComments);
+        newComment.value = "";
+        new_kwh.value = 0;
+        newMiles.value = 0;
+        new_paid.value = 0;
+      }
+
+      function addCharge() {
+
+        // values newly entered
+        const newComment = document.getElementById("new_comment");
+        const newOdo = document.getElementById("new_odo");
+        const newPerc = document.getElementById("new_perc");
+        const newTemp = document.getElementById("new_temp");
+        const newPr = document.getElementById("new_pr");
+
+        const newKWh = document.getElementById("new_kwh");
+        const newMiles = document.getElementById("new_miles");
+        const newPaid = document.getElementById("new_paid");
+
+        // get the numbers in correct format
+        var now = new Date();  // hopefully set the date here, and not at load 
+        var odo = parseInt(newOdo.value, 10);   
+        var perc = parseInt(newPerc.value, 10);
+        var temp = parseInt(newTemp.value, 10);   
+        var pr = parseInt(newPr.value, 10); 
+
+        var kwh = parseInt(newKWh.value, 10);   
+        var miles = parseInt(newMiles.value, 10);   
+        var paid = parseFloat(newPaid.value);   
+
+        // log action in console
+        console.log("add comment, addCharge ", client.auth.user.id)
+
+        // insert new doc in collection
+        db.collection("comments")
+        .insertOne({ owner_id : client.auth.user.id, dateTime : now , odo: odo , perc: perc,  temp: temp ,  comment: newComment.value,  
+                        pr: pr , kwh : kwh, miles: miles,  paid : paid})
+        .then(displayComments);
+        newComment.value = "";
+        new_kwh.value = 0;
+        newMiles.value = 0;
+        new_paid.value = 0;
+        }
+
+    </script>
+  </head>
+  <body onLoad="displayCommentsOnLoad()">
+    <h3 style="color:rgb(166, 0, 255);">This is Rho's Tesla blog </h3>
+    <div style="color:rgb(0, 200, 0);" id="content">
+      Using stitch to add content to M0 cluster, loosely based on MDB Blog Tutorial.<br>
+      https://docs.mongodb.com/stitch/tutorials/build-blog/
+    </div>
+    <hr style="color:white; background-color: rgb(166, 0, 255); ">
+    <div id="header">
+        <b>Day Date Time -  Odometer  -  % Charged -  Perceived Range - Comment</b><p></p>
+    </div>
+    <div id="d_display"></div>
+    <hr style="color:white; background-color: rgb(166, 0, 255); ">
+        <h4 style="color:rgb(166, 0, 255);">Current Stats:</h4>
+        <table>
+            <tr><th align="right">% charge:     </th><th align="left">  <input type="number" id="new_perc" min="0" max="100" placeholder="50" autofocus></th></tr>
+            <tr><th align="right">Odometer:     </th><th align="left">  <input type="number" id="new_odo" value=2000></th></tr>
+            <tr><th align="right">Comment:      </th><th align="left">  <input type="text" id="new_comment"></th></tr>
+            <tr><th> <p> </p></th><th> </th></tr>
+            <tr><th align="right">Temp (F):     </th><th align="left">  <input type="number" id="new_temp" min="-20" max="150" placeholder="50"> </th></tr>
+            <tr><th align="right">Perceived Range:  </th><th align="left">   <input type="number" id="new_pr" min="0" max="320" placeholder="150"></th></tr>
+        </table><p> </p>
+        <input type="submit" value="Save Current Stats" style="color:white; background-color: rgb(166, 0, 255); " onClick="addStats()"> <p> </p>
+        <h4 style="color:rgb(0, 200, 0);"> Charging:</h4>
+        <table>
+            <tr><th align="right">kWh added:      </th><th align="left">  <input type="number" min="0" max="75" placeholder="30" id="new_kwh"></th></tr>
+            <tr><th align="right">miles added:    </th><th align="left">  <input type="number" min="0" max="320" placeholder="150" id="new_miles"></th></tr>
+            <tr><th align="right">   paid ($):    </th><th align="left">  <input type="number" min="0" max="200" placeholder="10" id="new_paid"></th></tr>
+        </table><p> </p>    
+        <input type="submit" value="Save Charging Details" style="color:white; background-color: rgb(0, 200, 0);" onClick="addCharge()"> 
+       <p> </p>
+       <hr style="color:white; background-color: rgb(166, 0, 255); ">
+  </body>
+
+</html>
