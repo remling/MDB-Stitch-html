@@ -19,4 +19,5 @@ This is a "sanitized" version of the html file since no authentication restricti
 **Next steps:** (not necessarily in this order)
 - add authentication based on gmail account
 - attmempt conversion to Android App
+- determine souce of and remove leading commas in list
 
