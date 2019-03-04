@@ -6,9 +6,14 @@ Allows data entry for and listing of simple Electric Car Power Stats based on Od
 
 This is a "sanitized" version of the html file since no authentication restrictions are applied
 
-To use please replace
-- `<mongodb-atlas>` with own Atlas Cluster name
-- `<stitch-application-name>` with own Stitch Application name
+**To use please:**
+
+- follow **Basic Blog** tutorial listed above
+     - create own Atlas Cluster (M0 is free)
+     - create own Stitch App linked to own Atlas Cluster
+- replace
+     - `<mongodb-atlas>` with own Atlas Cluster name
+     - `<stitch-application-name>` with own Stitch Application name
 
 
 **Next steps:** (not necessarily in this order)
