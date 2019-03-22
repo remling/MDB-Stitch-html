@@ -32,10 +32,12 @@ This is a "sanitized" version of the html file since no authentication restricti
 
 (not necessarily in this order)
 
+
 - [x] update readme with images
 - [ ] add authentication based on gmail account
 - [ ] attempt conversion to Android App
 - [ ] (Optional) determine source of and remove leading commas in list
 - [ ] add charging details to list on top
 - [ ] add charts portion to provide results such as cost per mile or loss of charge
+
 
