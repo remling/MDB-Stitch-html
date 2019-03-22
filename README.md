@@ -16,8 +16,18 @@ This is a "sanitized" version of the html file since no authentication restricti
      - `<stitch-application-name>` with own Stitch Application name
 
 
+**Example of html list (top portion)**
+
+![image1](./images/top_list.png)
+
+**Current data entry portion (lower portion)**
+
+![image2](./images/data_entry.png)
+
 **Next steps:** (not necessarily in this order)
-- add authentication based on gmail account
-- attmempt conversion to Android App
-- determine souce of and remove leading commas in list
+
+- [x] update readme with images
+- [ ] add authentication based on gmail account
+- [ ] attempt conversion to Android App
+- [ ] (Optional) determine source of and remove leading commas in list
 
