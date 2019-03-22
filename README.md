@@ -19,13 +19,13 @@ This is a "sanitized" version of the html file since no authentication restricti
 ## Example of html list (top portion)
 
 
-![image1](./images/top_list.png)
+![image1](./images/top_list2.png)
 
 
 ## Current data entry portion (lower portion)
 
 
-![image2](./images/data_entry.png)
+![image2](./images/data_entry2.png)
 
 
 ## Next steps: 
