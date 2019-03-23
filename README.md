@@ -19,13 +19,13 @@ This is a "sanitized" version of the html file since no authentication restricti
 ## Example of html list (top portion)
 
 
-![image1](./images/top_list2.png)
+![image1](./images/top03.png)
 
 
 ## Current data entry portion (lower portion)
 
 
-![image2](./images/data_entry2.png)
+![image2](./images/bot03.png)
 
 
 ## Next steps: 
@@ -36,8 +36,8 @@ This is a "sanitized" version of the html file since no authentication restricti
 - [x] update readme with images
 - [ ] add authentication based on gmail account
 - [ ] attempt conversion to Android App
-- [ ] (Optional) determine source of and remove leading commas in list
-- [ ] add charging details to list on top
+- [x] (Optional) determine source of and remove leading commas in list (moved to end)
+- [x] add charging details to list on top (cost only)
 - [ ] add charts portion to provide results such as cost per mile or loss of charge
 
 
