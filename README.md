@@ -22,10 +22,6 @@ This is a "sanitized" version of the html file since no authentication restricti
 ![image1](./images/site011.png)
 
 
-## Current data entry portion (lower portion)
-
-
-![image2](./images/bot03.png)
 
 
 ## Next steps: 
