@@ -16,16 +16,12 @@ This is a "sanitized" version of the html file since no authentication restricti
      - `<stitch-application-name>` with own Stitch Application name
 
 
-## Example of html list (top portion)
+## Example display (list and data entry)
 
 
-![image1](./images/top03.png)
+![image1](./images/site011.png)
 
 
-## Current data entry portion (lower portion)
-
-
-![image2](./images/bot03.png)
 
 
 ## Next steps: 

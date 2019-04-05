@@ -1,5 +1,5 @@
 <html>
-        <!--  last updated 20190323 -->
+        <!--  last updated 20190403, equivalent to t011 -->
   <head>
     <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.1.1/stitch.js">
     </script>
@@ -19,19 +19,38 @@
       }).catch(err => {
                 console.error(err)
       });
-      function displayComments() {
-        db.collection("comments")
-          .find({dateTime :{$exists : 1}}, {sort : {_id : -1}, limit: 10} )
-          .toArray()
-          .then(docs => {
-            const html = docs.map(doc => `<p> ${doc.odo} - ${doc.perc} - ${doc.pr} - ${doc.comment} - ${doc.paid} -  ${doc.dateTime}`);
-            document.getElementById("d_display").innerHTML = html; 
-        });
+      function displayTable() {
+        // Get a hook to the comments collection
+        const entries = db.collection('comments');
+
+        return entries.find( {dateTime :{$exists : 1}}, { limit: 10, sort: { "odo": -1 } })
+        .asArray()
+        .then(displayEntries)
       }
+      // Renders the the employees' information in the table
+      function displayEntries(entries) {
+        const entriesTableBody = document.getElementById("entries");
+        const numResultsEl = document.getElementById("num-results");
+        const tableRows = entries.map(entries => {
+            return `
+             <tr>
+                <td align="center">${entries.odo}</td>
+                <td align="center">${entries.perc}</td>
+                <td align="center">${entries.pr}</td>
+                <td align="center">${entries.paid || "  -  "}</td>
+                <td align="left">${entries.comment}</td>
+                <td align="left">${entries.dateTime}</td>
+            </tr>
+            `;
+        });
+        entriesTableBody.innerHTML = tableRows.join("");
+        numResultsEl.innerHTML = entries.length;
+        }
+
       function displayCommentsOnLoad() {
         client.auth
           .loginWithCredential(new stitch.AnonymousCredential())
-          .then(displayComments)
+          .then(displayTable)
           .catch(console.error);
       }
       function addStats() {
@@ -112,10 +131,26 @@
       https://docs.mongodb.com/stitch/tutorials/build-blog/
     </div>
     <hr style="color:white; background-color: rgb(166, 0, 255); ">
-    <div id="header">
-        <b>Odometer  -  % Charged -  Perceived Range - Comment - Paid to charge  - Day Date Time </b><p> </p>
-    </div>
-    <div id="d_display"></div>
+
+      <table cellpadding="15" bgcolor="#F9F3FF">
+        <thead>
+          <tr>
+            <th align="center"> ODO </th>
+            <th align="center"> % charge</th>
+            <th align="center"> Range </th>
+            <th align="center"> Paid </th>
+            <th align="center"> Comment</th>
+            <th align="center"> Date Time (PxT) </th>
+          </tr>
+        </thead>
+        <tbody id='entries'></tbody>
+        <tr><td></td><td><td></td>
+            <td>  <b>Paid </b></td>
+            <td>  <b>less than or equal </b></td>
+            <td>  <b>0.01 means charged with 110 Volt </b> </td>
+        </tr>
+      </table>
+        
     <hr style="color:white; background-color: rgb(166, 0, 255); ">
         <h4 style="color:rgb(166, 0, 255);">Current Stats:</h4>
         <table>
