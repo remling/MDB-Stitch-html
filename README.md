@@ -32,7 +32,7 @@ This is a "sanitized" version of the html file since no authentication restricti
 - [x] update readme with images
 - [ ] add authentication based on gmail account
 - [ ] attempt conversion to Android App
-- [x] (Optional) determine source of and remove leading commas in list (moved to end)
+- [x] (Optional) determine source of and remove leading commas in list (1. moved to end, 2. replaced list with table)
 - [x] add charging details to list on top (cost only)
 - [ ] add charts portion to provide results such as cost per mile or loss of charge
 
