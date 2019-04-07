@@ -4,7 +4,7 @@ Allows data entry for and listing of simple Electric Car Power Stats based on Od
 
 Initial attempt at MDB stitch project based on Tutorial for [**Basic Blog**](https://docs.mongodb.com/stitch/tutorials/build-blog/) in Feb 2019. 
 
-~ March 2019 docs were updated to [Blog App Overview](https://docs.mongodb.com/stitch/tutorials/blog-overview/) separating [Blog App: Create the Backend](https://docs.mongodb.com/stitch/tutorials/guides/blog-backend/) and [Blog App: Create a Web Client](https://docs.mongodb.com/stitch/tutorials/guides/blog-web/). The updated docs simplyfied steps, and will still work as a baseline for modification.
+~ March 2019 docs were updated to [Blog App Overview](https://docs.mongodb.com/stitch/tutorials/blog-overview/) separating [Blog App: Create the Backend](https://docs.mongodb.com/stitch/tutorials/guides/blog-backend/) and [Blog App: Create a Web Client](https://docs.mongodb.com/stitch/tutorials/guides/blog-web/). The updated docs simplified steps, and will still work as a baseline for modification.
 
 This is a "sanitized" version of the html file since no authentication restrictions are applied
 
