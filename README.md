@@ -21,7 +21,7 @@ This is a "sanitized" version of the html file since no authentication restricti
 ## Example display (list and data entry)
 
 
-![image1](./images/site011.png)
+![image1](./images/site012.png)
 
 
 

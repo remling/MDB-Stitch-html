@@ -23,7 +23,7 @@
         // Get a hook to the comments collection
         const entries = db.collection('comments');
 
-        return entries.find( {dateTime :{$exists : 1}}, { limit: 10, sort: { "odo": -1 } })
+        return entries.find( {dateTime :{$exists : 1}}, { limit: 10, sort: { "_id": -1 } })
         .asArray()
         .then(displayEntries)
       }
@@ -130,6 +130,8 @@
       Using stitch to add content to M0 cluster, loosely based on MDB Blog Tutorial.<br>
       https://docs.mongodb.com/stitch/tutorials/build-blog/
     </div>
+        <p>
+        please refresh to update table
     <hr style="color:white; background-color: rgb(166, 0, 255); ">
 
       <table cellpadding="15" bgcolor="#F9F3FF">
