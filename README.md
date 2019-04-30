@@ -20,6 +20,7 @@ This is a "sanitized" version of the html file since no authentication restricti
     - [Documentation for Building Charts](https://docs.mongodb.com/charts/saas/build-charts/)
     - [Blog post](https://www.mongodb.com/blog/post/mongodb-charts-gets-embeddable)
     - [Documentation for Embedding Charts](https://docs.mongodb.com/charts/saas/embedding-charts/?_ga=2.5683571.1534861390.1556568243-1519337452.1540396341)
+    - replace `actual-chart-link-here` with own Chart Link
 
 
 ## Example display (list and data entry)
