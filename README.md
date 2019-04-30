@@ -16,12 +16,17 @@ This is a "sanitized" version of the html file since no authentication restricti
 - replace
      - `<mongodb-atlas>` with own Atlas Cluster name
      - `<stitch-application-name>` with own Stitch Application name
+- for charts
+    - [Documentation for Building Charts](https://docs.mongodb.com/charts/saas/build-charts/)
+    - [Blog post](https://www.mongodb.com/blog/post/mongodb-charts-gets-embeddable)
+    - [Documentation for Embedding Charts](https://docs.mongodb.com/charts/saas/embedding-charts/?_ga=2.5683571.1534861390.1556568243-1519337452.1540396341)
+    - replace `actual-chart-link-here` with own Chart Link
 
 
 ## Example display (list and data entry)
 
 
-![image1](./images/site012.png)
+![image1](./images/site014.png)
 
 
 
@@ -36,6 +41,7 @@ This is a "sanitized" version of the html file since no authentication restricti
 - [ ] attempt conversion to Android App
 - [x] (Optional) determine source of and remove leading commas in list (1. moved to end, 2. replaced list with table)
 - [x] add charging details to list on top (cost only)
-- [ ] add charts portion to provide results such as cost per mile or loss of charge
+- [x] add charts portion 
+- [ ] optimize chart to provide results such as cost per mile or loss of charge (need more accurate data of home charging)
 
 

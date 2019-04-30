@@ -1,5 +1,5 @@
 <html>
-        <!--  last updated 20190429, equivalent to t013 -->
+  <!--  last updated 20190430, equivalent to t014 -->
   <head>
     <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.1.1/stitch.js">
     </script>
@@ -28,7 +28,7 @@
         .then(displayEntries)
       }
       // Renders the the employees' information in the table
-      function displayEntries(entries) {
+    function displayEntries(entries) {
         const entriesTableBody = document.getElementById("entries");
         const numResultsEl = document.getElementById("num-results");
         const tableRows = entries.map(entries => {
@@ -129,8 +129,10 @@
     <div style="color:rgb(0, 200, 0);" id="content">
       Using stitch to add content to M0 cluster, loosely based on MDB Blog Tutorial.<br>
       https://docs.mongodb.com/stitch/tutorials/build-blog/
+ 
+    
     </div>
-        <p>
+    <p>
         please refresh to update table
     <hr style="color:white; background-color: rgb(166, 0, 255); ">
 
@@ -147,9 +149,9 @@
         </thead>
         <tbody id='entries'></tbody>
         <tr><td></td><td><td></td>
-            <td>  <b>Paid </b></td>
-            <td>  <b>less than or equal </b></td>
-            <td>  <b>0.01 means charged with 110 Volt </b> </td>
+            <td>  <b>Paid = 1 </b></td>
+            <td>  <b> means charged with 110 Volt </b></td>
+            <td>  <b></b> </td>
         </tr>
       </table>
         
@@ -173,6 +175,13 @@
         <input type="submit" value="Save Charging Details" style="color:white; background-color: rgb(0, 200, 0);" onClick="addCharge()"> 
        <p> </p>
        <hr style="color:white; background-color: rgb(166, 0, 255); ">
-  </body>
+       <p> </p>
+    <!-- Embedding  chart -->
+        <iframe style="border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" 
+                width="640" height="480" 
+                src='actual chart-link-here'>
+        </iframe>
+    <!-- end embedding chart -->
+    </body>
 
 </html>
