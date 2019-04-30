@@ -17,9 +17,9 @@ This is a "sanitized" version of the html file since no authentication restricti
      - `<mongodb-atlas>` with own Atlas Cluster name
      - `<stitch-application-name>` with own Stitch Application name
 - for charts
-    - [Documentation on how to Build Charts](https://docs.mongodb.com/charts/saas/build-charts/)
+    - [Documentation for Building Charts](https://docs.mongodb.com/charts/saas/build-charts/)
     - [Blog post](https://www.mongodb.com/blog/post/mongodb-charts-gets-embeddable)
-    - [Documentation to embed charts](https://docs.mongodb.com/charts/saas/embedding-charts/?_ga=2.5683571.1534861390.1556568243-1519337452.1540396341)
+    - [Documentation for Embedding Charts](https://docs.mongodb.com/charts/saas/embedding-charts/?_ga=2.5683571.1534861390.1556568243-1519337452.1540396341)
 
 
 ## Example display (list and data entry)
