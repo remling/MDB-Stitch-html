@@ -1,0 +1,17 @@
+For cost per mile, please note at this time home charging does not record correct Data
+but once I know at which odometer reading the data becomes valid, the following may be a good start
+
+db.comments.aggregate(
+[
+{$match :{odo : {$gt : 1890}}}, // this is not the correct odometer reading
+{$group : {
+	_id : "result",
+	totalAmount:{$sum :"$paid"},
+	numberCharged:{$sum:1},    // need to remove zero cost charging if it is actually there
+	maxOdo : {$max: "$odo"},
+	minOdo : {$min: "$odo"}
+}},
+{$addFields :{ milesDriven : { $subtract: [ "$maxOdo", "$minOdo" ]} }},
+{$addFields :{ pricePerMile : {$divide :["$totalAmount", "$milesDriven"]} }}
+]
+)
