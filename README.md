@@ -42,6 +42,6 @@ This is a "sanitized" version of the html file since no authentication restricti
 - [x] (Optional) determine source of and remove leading commas in list (1. moved to end, 2. replaced list with table)
 - [x] add charging details to list on top (cost only)
 - [x] add charts portion 
-- [ ] optimize chart to provide results such as cost per mile or loss of charge (need more accurate data of home charging)
+- [ ] optimize chart to provide results such as cost per mile or loss of charge (need more accurate data of home charging - maybe Kill-a-watt will work)
 
 
