@@ -1,6 +1,6 @@
 # MDB-Stitch-html
 
-Allows data entry for and listing of simple Electric Car Power Stats based on Odometer reading, % charge, Temperature
+Allows data entry for and listing of simple Electric Car Power Stats based on Odometer reading, % charge, Temperature, etc.
 
 Initial attempt at MDB stitch project based on Tutorial for [**Basic Blog**](https://docs.mongodb.com/stitch/tutorials/build-blog/) in Feb 2019. 
 
@@ -26,7 +26,7 @@ This is a "sanitized" version of the html file since no authentication restricti
 ## Example display (list and data entry)
 
 
-![image1](./images/site014.png)
+![image1](./images/site015.png)
 
 
 
@@ -42,6 +42,7 @@ This is a "sanitized" version of the html file since no authentication restricti
 - [x] (Optional) determine source of and remove leading commas in list (1. moved to end, 2. replaced list with table)
 - [x] add charging details to list on top (cost only)
 - [x] add charts portion 
-- [ ] optimize chart to provide results such as cost per mile or loss of charge (need more accurate data of home charging - maybe Kill-a-watt will work)
+- [ ] optimize chart to provide results such as cost per mile or loss of charge 
+- [x] added more accurate data of home charging - using Kill-a-watt
 
 

@@ -1,5 +1,5 @@
 <html>
-  <!--  last updated 20190430, equivalent to t014 -->
+  <!--  last updated 201906021 equivalent to t015 -->
   <head>
     <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.1.1/stitch.js">
     </script>
@@ -149,8 +149,8 @@
         </thead>
         <tbody id='entries'></tbody>
         <tr><td></td><td><td></td>
-            <td>  <b>Paid = 1 </b></td>
-            <td>  <b> means charged with 110 Volt </b></td>
+            <td align="center">  <b> 1 </b></td>
+            <td>  <b> =  charged with 110 Volt, true cost unknown </b></td>
             <td>  <b></b> </td>
         </tr>
       </table>
@@ -167,6 +167,9 @@
         </table><p> </p>
         <input type="submit" value="Save Current Stats" style="color:white; background-color: rgb(166, 0, 255); " onClick="addStats()"> <p> </p>
         <h4 style="color:rgb(0, 200, 0);"> Charging (will include stats and current timestamp):</h4>
+        </h5>for home charge assume 1 kWh =  $ 0.16 </h5>
+        <p> </p>
+        <p> </p>
         <table>
             <tr><th align="right">kWh added:      </th><th align="left">  <input type="number" min="0" max="75" placeholder="30" id="new_kwh"></th></tr>
             <tr><th align="right">miles added:    </th><th align="left">  <input type="number" min="0" max="320" placeholder="150" id="new_miles"></th></tr>
