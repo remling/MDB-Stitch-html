@@ -43,6 +43,6 @@ This is a "sanitized" version of the html file since no authentication restricti
 - [x] add charging details to list on top (cost only)
 - [x] add charts portion 
 - [ ] optimize chart to provide results such as cost per mile or loss of charge 
-- [ ] added more accurate data of home charging - using Kill-a-watt
+- [x] added more accurate data of home charging - using Kill-a-watt
 
 
