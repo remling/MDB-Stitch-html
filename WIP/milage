@@ -1,0 +1,19 @@
+Starting Definition of how to attempt adidng milage
+2019-07-09
+
+
+will need some variables, collect data, then calc
+
+
+Retroactive  or whenever charge is completed?
+a new collection might be beneficial
+
+1. last paid exists and get amount paid2 and odo2
+2. second last paid get odo1
+3. odoD = odo2 - odo1   (odoDelta)
+4. cpm = paid2 / odoD
+5. create new collection and store: odo2, odoD paid2, cpm, date(?)
+6. display in text: most recent charge cost per mile (in cent : cpm*100
+7. 		    average cpm : avg of all cpms 
+8.graph cpm data points  (cpm on y and odo on x)
+9. add date of cpm ==> would prob be easiest if autmatically updated every time charge point gets added with a real $$$ amount, which now shoudl be every time
